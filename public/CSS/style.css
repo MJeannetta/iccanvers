@@ -1,0 +1,169 @@
+.mt-2 {
+    margin-top: 5rem !important;
+}
+
+.form-product {
+    margin-top: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.list-group-item .title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.list-group-item .description {
+    margin-top: 1rem;
+    font-size: 12px;
+}
+
+.card .card-body .title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.button {
+    border: none;
+    background-color: #FFF;
+}
+
+.button:hover {
+    background-color: rgb(244, 240, 240);
+}
+
+div {
+    margin: 0;
+    padding: 0;
+    font: 12px Arial;
+}
+
+.menu {
+    height: 60px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 100px;
+}
+
+.menu li {
+    float: left;
+    width: 100px;
+}
+
+.menu li a:link, .menu li a:visited {
+    display: block;
+    color: black;
+    background: white;
+    padding: 6px 10px;
+    border-right: 1px solid #FFF;
+    text-decoration: none;
+}
+
+.menu li a:active {background-color: rgb(244, 240, 240);}
+
+.menu .sousmenu {
+    list-style-type: none;
+    display: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+}
+
+.menu .sousmenu li {
+    float: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+}
+
+.menu .sousmenu li a:link, .menu li a:visited {
+    display: block;
+    color: black;
+    text-decoration: none;
+    background-color: #FFF;
+}
+
+.menu .sousmenu li a:hover {
+    background-color: rgb(244, 240, 240);
+}
+
+.menu li:hover .sousmenu {
+    display: block;
+}
+
+/* Styles pour une class quelconque */
+.w-10,
+.h-10 {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.sm\:w-12,
+.sm\:h-12 {
+    @media (min-width: 640px) {
+        width: 3rem; /* Ajuste les petits écrans ou plus */
+        height: 3rem; /* Pour les petits écrans */
+    }
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+.rounded-full {
+    border-radius: 9999px; /* Rend le profil circulaire */
+}
+
+/* Il ajoute de l'espace entre le profil et le nom de user */
+.profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-picture {
+    margin-right: 1rem; /* Sépare deux éléments avec une marge au milieu */
+}
+
+.user-info-container {
+    flex-grow: 1; /* Pour que le conteneur s'étire et utilise tout l'espace disponible */
+}
+  
+/* Nom d'utilisateur */
+.username {
+    font-weight: bold;  /* Pour mettre en gras si nécessaire */
+}
+
+/* Commentaire */
+.comment {
+    word-wrap: break-word; /* Pour que les longs commentaires se coupent correctement */
+}
+
+/* POUR INPUT SANS BORDURES */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.input-container {
+    margin: 20px;
+}
+
+input {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #CCCCCC; /* Bordure seulement en bas */
+    padding: 8px;
+    font-size: 16px;
+    width: 300px;
+    outline: none; /* Supprime la bordure par défaut */
+}
+
+input::placeholder {
+    color: #999;
+}
