@@ -29,7 +29,8 @@ class UserController extends Controller
     {
         // Création de l'utilisateur
         $user = new User();
-        $user->name = $request->name;
+        $user->firstname = $request->firstname;
+        $user->lastname = $request->lastname;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->gender = $request->gender;
@@ -38,8 +39,12 @@ class UserController extends Controller
         $user->save();
 
         // Assigner le rôle par défaut à l'utilisateur
-        $defaultRole = Role::where('name', 'user')->first(); // Récupérez le rôle par défaut
-        $user->roles()->attach($defaultRole); // Attachez le rôle à l'utilisateur
+        $defaultRole = Role::where('name', 'user')->first();
+                            
+        // Attacher le rôle d'un utilisateur
+        if ($defaultRole) {
+            $user->roles()->attach($defaultRole);
+        }
 
         // Redirection avec un message de succès
         return redirect('login')->with('success', 'Inscription réussie, vous pouvez vous connectez');

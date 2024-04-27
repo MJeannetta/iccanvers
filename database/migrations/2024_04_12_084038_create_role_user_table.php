@@ -16,7 +16,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('role_id');
-            $table->timestamps();
+            // $table->timestamps();
             
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
@@ -30,8 +30,8 @@ return new class extends Migration
             DB::table('role_user')->insert([
                 'user_id' => $user->id,
                 'role_id' => $defaultRole->id,
-                'created_at' => now(),
-                'updated_at' => now(),
+                // 'created_at' => now(),
+                // 'updated_at' => now(),
             ]);
         }
     }

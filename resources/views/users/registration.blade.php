@@ -9,11 +9,18 @@
                 {{-- FORMULAIRE D'INSCRIPTION --}}
                 <form action="{{ route('registration') }}" method="post">
                     @csrf
+                    
                     <h4>Inscrivez-vous</h4>
 
-                    <label for="name">Nom</label>
-                    <input type="text" id="name" name="name" class="form-control" placeholder="Entrez le nom" value="{{ old('name') }}">
-                    @error('name')
+                    <label for="firstname">Prénom</label>
+                    <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Entrez le prénom" value="{{ old('firstname') }}">
+                    @error('firstname')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+
+                    <label for="lastname">Nom</label>
+                    <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Entrez le nom" value="{{ old('lastname') }}">
+                    @error('lastname')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
 

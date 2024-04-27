@@ -140,7 +140,7 @@
 
                                                                     {{-- NOM D'UTILISATEUR ET LA DATE DE CRÉATION DE SON COMMENTAIRE --}}
                                                                     <p class="mb-1">
-                                                                        @<span class="username">{{ $comment->user->name }}</span> <span class="small">{{ $comment->created_at->diffForHumans() }}</span>
+                                                                        @<span class="username">{{ $comment->user->fullname() }}</span> <span class="small">{{ $comment->created_at->diffForHumans() }}</span>
                                                                     </p>
                                                                     <div>
 
@@ -209,7 +209,7 @@
 
                                                                                         {{-- NOM D'UTILISATEUR ET LA DATE DE CRÉATION DE LA RÉPONSE --}}
                                                                                         <p class="mb-1">                                                                            
-                                                                                            @<span class="username">{{ $reply->user->name }}</span> <span class="small">{{ $reply->created_at->diffForHumans() }}</span>                                                                            
+                                                                                            @<span class="username">{{ $reply->user->fullname() }}</span> <span class="small">{{ $reply->created_at->diffForHumans() }}</span>                                                                            
                                                                                         </p>
                                                                                         <div>
                                                                                             <ul class="menu">

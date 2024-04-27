@@ -21,7 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('theme_id');
             $table->foreign('theme_id')->references('id')->on('themes')->onDelete('cascade');
             $table->string('type');
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 

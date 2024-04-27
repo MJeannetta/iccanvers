@@ -30,7 +30,7 @@
                         <td>
                             @if($ministry->users->isNotEmpty())
                                 @foreach($ministry->users as $leader)
-                                    {{ $leader->name }}
+                                    {{ $leader->fullname() }}
                                 @endforeach
                             @else
                                 Aucun leader défini

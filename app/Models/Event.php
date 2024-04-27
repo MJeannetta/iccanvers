@@ -20,6 +20,8 @@ class Event extends Model
         'type',
     ];
 
+    public $timestamps = false;     // Cette ligne pour désactive les timestamps
+
     // RÉCUPÉRER LE OU LES ORGANISATEURS DE L'ÉVÉNEMENT
     public function organizers()
     {

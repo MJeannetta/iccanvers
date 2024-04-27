@@ -11,6 +11,8 @@ class Ministry extends Model
 
     protected $fillable = ['name', 'description'];
 
+    public $timestamps = false;     // Cette ligne pour désactive les timestamps
+
     // LES MEMBRES DU MINISTÈRE
     public function users()
     {

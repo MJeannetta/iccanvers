@@ -18,7 +18,7 @@
                 <label for="leaderId">Leader:</label>
                 <select class="form-control" id="leaderId" name="leader" required>
                     @foreach($leaders as $leader)
-                        <option value="{{ $leader->id }}">{{ $leader->name }}</option>
+                        <option value="{{ $leader->id }}">{{ $leader->fullname() }}</option>
                     @endforeach
                 </select>
             </div>

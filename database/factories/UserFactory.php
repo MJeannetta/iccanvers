@@ -19,7 +19,8 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name(),
+            'firstname' => $this->faker->firstName(),
+            'lastname' => $this->faker->lastName(),
             'email' => $this->faker->unique()->safeEmail(),
             'gender' => $this->faker->randomElement(['male', 'female']), // Ajout du genre avec des valeurs aléatoires 'male' ou 'female'
             'birth_date' => $this->faker->date(), // Ajout de la date de naissance avec une date aléatoire
@@ -39,16 +40,18 @@ class UserFactory extends Factory
         ]);
     }
 
-     // MÉTHODE POUR ATTRIBUER DES RÔLES AUX UTILISATEURSS
-     public function configure()
-     {
-         return $this->afterCreating(function (User $user) {
-             // Récupérer le rôle par défaut
-             $defaultRole = Role::where('name', 'user')->first();
- 
-             // Associer le rôle à l'utilisateur via la table de pivot
-             $user->roles()->attach($defaultRole);
-         });
-     }
+    // MÉTHODE POUR ATTRIBUER DES RÔLES AUX UTILISATEURSS
+    public function configure()
+    {
+        return $this->afterCreating(function (User $user) {
+            // Récupérer le rôle par défaut
+            $defaultRole = Role::where('name', 'user')->first();
+
+            // Associer le rôle à l'utilisateur via la table de pivot
+            if ($defaultRole) {
+                $user->roles()->attach($defaultRole);
+            }
+        });
+    }
 }
 

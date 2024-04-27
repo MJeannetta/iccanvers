@@ -11,6 +11,8 @@ class Role extends Model
 
     protected $fillable = ['name', 'description'];
 
+    public $timestamps = false;     // Cette ligne pour désactive les timestamps
+
     // LES MEMBRES QUI ONT UN OU PLUSIEURS RÔLES
     public function users()
     {

@@ -22,7 +22,8 @@ class UserRegistrationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'=>'required|min:3',
+            'firstname'=>'required|min:3',
+            'lastname'=>'required|min:3',
             'email'=>'required|email|unique:users',
             'password'=>'required|min:6',
             'gender' => 'required|in:Male,Female',
@@ -33,8 +34,10 @@ class UserRegistrationRequest extends FormRequest
 
     public function messages() {
         return [
-            'name.required'=>'Le nom est requis',
-            'name.min'=>'Le nom doit avoir minimum 3 caractères',
+            'firstname.required'=>'Le prénom est requis',
+            'firstname.min'=>'Le prénom doit avoir minimum 3 caractères',
+            'lastname.required'=>'Le nom est requis',
+            'lastname.min'=>'Le nom doit avoir minimum 3 caractères',
             'email.required'=>'L\'email est requis',
             'email.email'=>'L\'email doit être de type email',
             'email.unique'=>'Cet email est déjà utilisé',

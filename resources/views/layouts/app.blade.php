@@ -42,7 +42,7 @@
           @endauth
           @guest()
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('login') }}">SE CONNECTER/ S'INSCRIRE</a>
+              <a class="nav-link" href="{{ route('login') }}">SE CONNECTER</a>
             </li>
           @endguest
         </ul>

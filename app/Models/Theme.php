@@ -11,6 +11,8 @@ class Theme extends Model
 
     protected $fillable = ['name'];
 
+    public $timestamps = false;     // Cette ligne pour désactive les timestamps
+
     public function events()
     {
         return $this->hasMany(Event::class);

@@ -18,7 +18,8 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'firstname',
+        'lastname',
         'email',
         'password',
         'gender',
@@ -46,6 +47,8 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public $timestamps = false;     // Cette ligne pour désactive les timestamps
+
     // LES COMMENTAIRES DE L'UTILISATEUR
     public function comments() 
     {
@@ -68,5 +71,11 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(Role::class);
+    }
+
+    // LE NOM COMPLET D'UN UTILISATEUR
+    public function fullname()
+    {
+        return $this->firstname . ' ' . $this->lastname;
     }
 }

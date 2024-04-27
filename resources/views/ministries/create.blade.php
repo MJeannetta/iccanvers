@@ -18,7 +18,7 @@
                 <select class="form-control" name="leader" required>
                     <option value="" selected disabled>-- Choisissez un(e) responsable --</option>
                     @foreach($leaders as $leader)
-                        <option value="{{ $leader->id }}">{{ $leader->name }}</option>
+                        <option value="{{ $leader->id }}">{{ $leader->fullname() }}</option>
                     @endforeach
                 </select>
             </div>
