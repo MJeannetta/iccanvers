@@ -6,7 +6,8 @@ use App\Models\Article;
 use App\Http\Requests\ArticleRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Policies\ArticlePolicy;
+// use App\Policies\ArticlePolicy;
+// use Carbon\Carbon;
 
 class ArticleController extends Controller
 {
@@ -20,18 +21,21 @@ class ArticleController extends Controller
     }
     
     // CRÉATION D'UN ARTICLE
-    public function store(ArticleRequest $request, Article $article)
+    public function store(ArticleRequest $request)
     {
         // Seul admin a le droit de créer l'article
         if (!Auth::user()->roles->contains('name', 'admin')) {
             return redirect()->route('articles.index')->with('error', 'Vous n\'avez pas les permissions pour créer cet article.');
         }
 
-        Article::create([
+        $article = Article::create([
             'titre' => $request->titre,
             'description' => $request->description,
             'user_id' => Auth::id(),
         ]);
+
+        // $roles = Auth::user()->roles()->pluck('name');   dd($roles);
+        // $articleAuthor = $article->user->fullname();     dd($articleAuthorName);
 
         // La session récupère et affiche le message flash dans une boîte d'alerte
         session()->flash('success', 'Article ajouté avec succès');

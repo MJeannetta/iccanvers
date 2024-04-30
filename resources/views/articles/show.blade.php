@@ -9,7 +9,7 @@
         </div>
 
         @auth()
-            @if(Auth::user()->role === ('admin'))
+            @if(Auth::user()->roles->contains('name', 'admin'))
                 <div class="card-footer">
                     <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-info">Editer</a>
                     

@@ -28,7 +28,7 @@ class MinistryController extends Controller
 
         $ministries = Ministry::all();
 
-        // Récupérer tous les utilisateurs ayant le rôle de leader (Table pivot)
+        // Récupérer tous les utilisateurs ayant le rôle de leader (Table pivot)    
         $leaders = User::whereHas('roles', function ($query) {
             $query->where('name', 'leader');
         })->get();

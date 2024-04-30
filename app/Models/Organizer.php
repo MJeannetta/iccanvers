@@ -13,6 +13,7 @@ class Organizer extends Model
 
     public $timestamps = false;     // Cette ligne pour désactive les timestamps
 
+    // LES MEMBRES DU MINISTÈRE
     public function events()
     {
         return $this->belongsToMany(Event::class);

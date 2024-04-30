@@ -13,6 +13,7 @@ class Theme extends Model
 
     public $timestamps = false;     // Cette ligne pour désactive les timestamps
 
+    // LES ÉVÉNEMENTS D'UN THÈME
     public function events()
     {
         return $this->hasMany(Event::class);

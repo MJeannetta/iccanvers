@@ -20,11 +20,15 @@ class Article extends Model
         'user_id',
     ];
 
-    /**
-     * Récupérez les commentaires de l'article.
-     */
+    // RÉCUPÉRER LES COMMENTAIRES D'UN ARTICLE
     public function comments()
     {
         return $this->hasMany(Comment::class)->latest(); // "latest()" = Du plus récent au plus ancien commentaire
+    }
+
+    // L'ARTICLE D'UN UTILISATEUR
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

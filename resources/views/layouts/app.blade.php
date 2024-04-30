@@ -22,7 +22,6 @@
           <li class="nav-item active">
             <a class="nav-link" href="#">À PROPOS</a>
           </li>
-
           <li class="nav-item active">
             <a class="nav-link" href="{{ route('ministries.index') }}">MINISTÈRES</a>
           </li>

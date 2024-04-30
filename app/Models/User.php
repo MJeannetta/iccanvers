@@ -49,16 +49,28 @@ class User extends Authenticatable
 
     public $timestamps = false;     // Cette ligne pour désactive les timestamps
 
-    // LES COMMENTAIRES DE L'UTILISATEUR
+    // LES ARTICLES D'UN UTILISATEUR
+    public function articles() 
+    {
+        return $this->hasMany(Article::class)->latest();
+    }
+
+    // LES COMMENTAIRES D'UN UTILISATEUR
     public function comments() 
     {
         return $this->hasMany(Comment::class)->latest();
     }
 
-    // LA VILLE DE L'UTILISATEUR
+    // LES RÉPONSES D'UN UTILISATEUR
+    public function replies() 
+    {
+        return $this->hasMany(Reply::class)->latest();
+    }
+
+    // LA VILLE D'UN UTILISATEUR
     public function location()
     {
-        return $this->belongsTo(Town::class);
+        return $this->belongsTo(Location::class);
     }
 
     // MINISTÈRES DES MEMBRES

@@ -13,8 +13,15 @@ class Location extends Model
 
     public $timestamps = false;     // Cette ligne pour désactive les timestamps
 
+    // LES ÉVÉNEMENTS D'UNE VILLE
     public function events()
     {
         return $this->hasMany(Event::class);
+    }
+
+    // LES UTILISATEURS D'UNE VILLE
+    public function users()
+    {
+        return $this->hasMany(User::class);
     }
 }
