@@ -1,0 +1,113 @@
+@import 'navbar';
+@import'welcome';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+    
+   }
+body{
+    background-color: $white-blue;
+}
+.hero {
+    
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        height: 70vh;
+        z-index: 1;
+        width: 100%;
+        max-width: 1200px;
+        
+
+
+        @include mobile{
+            grid-template-columns: 1fr;
+            height: 100%;
+
+        }
+
+        &--left{
+            width: 100%;
+            line-height: 1.2;
+
+
+            @include mobile{
+                line-height: 1.5;
+            }
+        }
+
+        &--left h1{
+            font-size: 2rem;
+            font-weight: 700;
+            color: $mauve;
+
+            @include mobile{
+                font-size: 1.5rem;
+            }
+        }
+
+        &--left h2{
+            font-size: 1rem;
+            color: $blue-dark9;
+            font-weight: 400;
+
+            @include mobile{
+                font-size: 0.75rem;
+            }
+        }
+
+        &--left p{
+            font-size: 1rem;
+            color: $blue-dark9;
+            margin-top: 1rem;
+            font-weight: 740;
+
+            @include mobile{
+                font-size: 1rem;
+            }
+        }
+
+        &--btn{
+            font-size: 1rem;
+            background-color: $mauve;
+            padding: 12px 24px;
+            border: none;
+            outline: none; 
+            border-radius: 4px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            cursor: pointer;
+            position: relative;
+            position: all 0.3s ;
+            outline: none;
+            
+
+
+            &:hover{
+                background-color: $green;
+            }
+        }
+
+        &--btn a {
+            position: relative;
+            color: $white-blue;
+        }
+
+        &--right{
+            text-align: center;
+
+        }
+
+        &--img{
+            height: 100%;
+            width: 100%;
+        }
+
+    }
+}

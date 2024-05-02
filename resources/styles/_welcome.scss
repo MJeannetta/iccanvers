@@ -1,0 +1,36 @@
+.welcome__banner{
+    
+    &--text{
+        text-align: center;
+        //color: black;
+        color: $white-blue;
+        position: absolute;        
+        top: 215px;
+        left: 181px;
+        
+
+        
+        & h1{
+           font-style: italic;
+           font-size: 7rem;
+           font-weight: 900;
+        }
+        & h6{
+            font-size: 3rem;
+            font-weight: 900;
+         }
+
+
+        
+    }
+
+    @include mobile{
+        grid-template-columns: 1fr;
+        height: 100%;
+
+    }
+
+    
+
+
+  }
