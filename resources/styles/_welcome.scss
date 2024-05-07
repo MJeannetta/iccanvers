@@ -12,7 +12,7 @@
         
         & h1{
            font-style: italic;
-           font-size: 7rem;
+           font-size: 10rem;
            font-weight: 900;
         }
         & h6{
@@ -24,12 +24,7 @@
         
     }
 
-    @include mobile{
-        grid-template-columns: 1fr;
-        height: 100%;
-
-    }
-
+    
     
 
 
